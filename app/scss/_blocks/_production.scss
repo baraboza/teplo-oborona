@@ -1,0 +1,172 @@
+.production {
+	margin-top: 60px;
+	padding-bottom: 180px;
+
+	&__title {
+		text-align: center;
+	}
+
+	&__list {
+		margin-top: 60px;
+	}
+
+	&__item-box {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		background-color: #fff;
+		box-shadow: 0 20px 40px rgba(#666, 0.2);
+		padding: 25px 15px 1px;
+		position: relative;
+		transition: 0.3s;
+
+		&::before, &::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			border: 6px solid #ff7124;
+			width: 45px;
+			transition: 0.3s;
+		}
+
+		&::before {
+			left: 0;
+			border-right: none;
+		}
+
+		&::after {
+			right: 0;
+			border-left: none;
+		}
+
+		&:hover {
+
+			&::before, &::after {
+				width: 51%;
+			}
+		}
+	}
+
+	&__item-title {
+		font-size: 24px;
+		font-weight: 600;
+		text-align: center;
+	}
+
+	&__item-row {
+		display: flex;
+		margin-top: 30px;
+		margin-bottom: auto;
+	}
+
+	&__item-col-left, &__item-col-right {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+	&__packing {
+		font-weight: 600;
+		margin-left: 15px;
+		margin-top: 20px;
+	}
+
+	&__item-col-right {
+		margin-top: 10px;
+		padding-left: 15px;
+
+		ul {
+			list-style-type: none;
+			padding-left: 0;
+
+			> li {
+				padding-left: 15px;
+				position: relative;
+
+				&::before {
+					content: '•';
+					color: #00559e;
+					position: absolute;
+					left: 0;
+				}
+
+				&:nth-child(n + 2) {
+					margin-top: 1em;
+				}
+			}
+		}
+	}
+
+	&__price {
+		margin-top: 30px;
+		text-align: center;
+		font-size: 18px;
+
+		b {
+			font-size: 30px;
+			font-weight: 600;
+		}
+	}
+
+	&__button {
+		margin: 35px auto -15px;
+		width: 218px;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.production {
+
+		&__item {
+
+			&:nth-child(n + 2) {
+				margin-top: 50px;
+			}
+		}
+	}	
+}
+
+@include media-breakpoint-down(sm) {
+	.production {
+		padding-bottom: 0;
+
+		&__list {
+			margin-top: 30px;
+		}
+
+		&__item-title {
+			font-size: 20px;
+		}
+		
+		&__item-row {
+			flex-wrap: wrap;
+		}
+
+		&__img-box {
+			text-align: center;
+		}
+
+		&__item-col-left, &__item-col-right {
+			flex: 0 0 100%;
+			max-width: none;
+		}
+
+		&__item-col-right {
+			padding-left: 0;
+		}
+
+		&__price {
+			margin-top: 20px;
+
+			b {
+				font-size: 22px;
+			}
+		}
+
+		&__button {
+			margin-top: 20px;
+		}
+	}
+}

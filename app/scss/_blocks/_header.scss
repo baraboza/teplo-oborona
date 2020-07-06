@@ -1,0 +1,199 @@
+.header {
+	position: relative;
+	font-size: 14px;
+	line-height: 21px;
+
+	&__main {
+		background-color: #fff;
+	}
+
+	&__main-container {
+		height: 80px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		width: 195px;
+	}
+
+	&__title {
+		width: 245px;
+		margin-left: 20px;
+		margin-right: auto;
+		color: #666;
+	}
+
+	&__location {
+		margin-right: auto;
+	}
+
+	&__tel {
+		font-size: 18px;
+		font-weight: 500;
+		@include hover-opacity;
+
+		i {
+			display: none;
+		}
+	}
+
+	&__request-call {
+		margin-left: 18px;
+		@include flex-center;
+		width: 165px;
+		height: 45px;
+		border: 2px solid #f5821f;
+		border-radius: 8px;
+		font-weight: 500;
+		transition: 0.2s;
+
+		&:hover {
+			background-color: #f5821f;
+			color: #fff;
+		}
+	}
+
+	&__toggle {
+		display: none;
+	}
+
+	&__nav {
+		position: absolute;
+		top: 95px;
+		width: 100%;
+
+		.menu {
+			display: flex;
+			justify-content: space-between;
+			background-color: #fff;
+			padding: 17px 37px;
+			border-radius: 8px;
+			font-size: 15px;
+			color: #00559e;
+		}
+
+		a {
+			@include hover-opacity;
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.header {
+
+		&__logo {
+			margin-right: auto;
+		}
+
+		&__title, &__location {
+			display: none;
+		}
+
+		&__toggle {
+			display: block;
+			position: relative;
+			margin-left: 50px;
+			width: 30px;
+			height: 20px;
+			flex-direction: column;
+			cursor: pointer;
+
+			span {
+				position: absolute;
+				left: 0;
+				right: 0;
+				height: 4px;
+				border-radius: 2px;
+				background-color: #1D1B1C;
+				transition: 0.2s;
+
+				&:nth-child(1) {
+					top: 0;
+				}
+
+				&:nth-child(2) {
+					top: 8px;
+				}
+
+				&:nth-child(3) {
+					bottom: 0;
+				}
+			}
+
+			&.active {
+
+				span {
+
+					&:nth-child(1) {
+						transform: rotate(45deg);
+						top: 8px;
+					}
+
+					&:nth-child(2) {
+						opacity: 0;
+					}
+
+					&:nth-child(3) {
+						transform: rotate(-45deg);
+						bottom: 8px;
+					}
+				}
+			}
+		}
+
+		&__nav {
+			display: none;
+
+			.menu {
+				font-size: 20px;
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.menu-item {
+
+				&:nth-child(n + 2) {
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.header {
+
+		&__main-container {
+			height: 60px;
+		}
+
+		&__logo {
+			width: 140px;
+		}
+
+		&__tel {
+
+			i {
+				display: block;
+				font-size: 22px;
+			}
+
+			span {
+				display: none;
+			}
+		}
+		
+		&__request-call {
+			display: none;
+		}
+
+		&__nav {
+			top: 75px;
+
+			.menu {
+				padding: 15px;
+			}
+		}
+	}
+}

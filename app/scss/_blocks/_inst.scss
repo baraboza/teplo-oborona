@@ -1,0 +1,44 @@
+.inst {
+	margin-top: 20px;
+	padding-top: 50px;
+	padding-bottom: 60px;
+	background-image: url('../img/inst-bg.png');
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+
+	&__content {
+		margin-top: 25px;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -37px;
+			top: 0;
+			width: 515px;
+			height: 515px;
+			background-image: url('../img/inst-icon.png');
+		}
+	}
+
+	&__widget {
+		max-width: 765px;
+		margin-left: auto;
+		position: relative;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.inst {
+		padding-top: 0;
+		margin-top: 50px;
+		padding-bottom: 40px;
+
+		&__content {
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

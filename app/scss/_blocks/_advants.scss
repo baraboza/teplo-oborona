@@ -1,0 +1,34 @@
+.advants {
+	margin-top: 20px;
+
+	&__item-icon {
+		height: 65px;
+	}
+
+	&__item-text {
+		font-size: 14px;
+		line-height: 21px;
+		max-width: 242px;
+	}
+
+	&__item-link {
+		display: inline-block;
+		margin-top: 21px;
+		color: #00559e;
+		text-decoration: underline;
+		@include hover-opacity;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.advants {
+
+		&__item {
+			margin-top: 20px;
+		}
+
+		&__item-icon {
+			height: 45px;
+		}
+	}
+}
